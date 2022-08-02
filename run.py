@@ -21,7 +21,7 @@ class Player:
     def __str__(self):
         return f"Greetings {self.first_name} {self.last_name} from {self.hometown}, Hello and Welcome to Quizeroo!!"
 
-def clear():
+def clear_terminal():
     os.system('clear')
 
 
@@ -133,4 +133,4 @@ print(
 )
 print("Welcome to Quizeroo!!")
 main()
-clear()
+clear_terminal()
