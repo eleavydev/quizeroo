@@ -108,6 +108,6 @@ def main():
         mark = (score/total_questions)*100
         print("That's a score of", str(mark) + '%')
 
-    print("Goodbye. Maybe call back some other time to play Quizeroo!")
+    print("Goodbye. Maybe call back another time to play Quizeroo!")
 
 main()
