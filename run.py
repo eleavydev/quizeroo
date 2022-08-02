@@ -6,11 +6,12 @@ class Player:
     """
     Define player class
     """
-    def __init__(self, first_name, last_name, age, hometown):
+    def __init__(self, first_name, last_name, age, hometown, quiz_speciality):
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
         self.hometown = hometown
+        self.quiz_speciality = quiz_speciality
 
     def __str__(self):
         return f"Greetings {self.first_name} {self.last_name} from {self.hometown}, Hello and Welcome to Quizeroo!!"
@@ -21,9 +22,10 @@ def main():
     fname = input("Please enter your first name \n")
     lname = input("Please enter your last name \n")
     age = int(input("Please enter your age \n"))
-    hometown = input("What is your home town \n")
+    hometown = input("What is your home town? \n")
+    quiz_speciality = input("What is your favorite topic for Quizzing? \n")
 
-    new_player = Player(fname, lname, age, hometown)
+    new_player = Player(fname, lname, age, hometown, quiz_speciality)
     print (f"{new_player}")
 
     ans = input("Are you ready to play (Yes/No:) ")
