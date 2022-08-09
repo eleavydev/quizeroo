@@ -139,7 +139,7 @@ def display_score(correct_guesses, guesses):
 """
 def replay_game():
 
-    response = input("Would you like to play again? (Yes or No): ")
+    response = input("Would you like to play again? (Please enter Y (Yes) or N (No): ")
     response = response.upper()
 
     if response == "YES" or response == "Y":
