@@ -68,6 +68,26 @@ def menu():
         print()
         menu()
 
+
+"""
+    Display quiz topics for user to choose
+"""
+def get_quiz_topic():
+
+    print("************Choose your Quiz Topic**************")
+    print()
+
+    choice = input("""
+           1: Fr Ted
+           2: 80's Pop Music
+           3: Geography
+
+           Please enter your choice: 
+           """)
+
+    # quiz_topic = input("What quiz topic would you like to choose (A. Fr. Ted, B. 80s Pop Music, or C. Geography): ")
+    
+
 """
     Need to flesh out rules , think about it is there a need to display anything?
 """
@@ -84,8 +104,8 @@ def play_game():
     correct_guesses = 0
     question_num = 1
 
-    quiz_topic = input("What quiz topic would you like to choose (A. Fr. Ted, B. 80s Pop Music, or C. Geography): ")
-    
+    get_quiz_topic()
+
     for question in questions:
         print("-------------------------")
         print(question)
