@@ -1,0 +1,23 @@
+{
+  "question": [
+    "Q1. What is the longest river in the world?",
+    "Q2. What is the capital city of Malta?",
+    "Q3. In which country would you find a city called Sighisoara?",
+    "Q4. In which city would you find the 'Spanish Steps'?",
+    "Q5. What is the largest lake in the world'?"
+  ],
+  "answer": [
+    "B",
+    "C",
+    "A",
+    "B",
+    "C"
+  ],
+  "options": [
+    ["A. River Liffey", "B. Amazon River","C. Corrib River","D. River Shannon"],
+    ["A. Dublin","B. Cork", "C. Valletta", "D. Belfast"],
+    ["A. Romania","B. England","C. Poland","D. Scotland"],
+    ["A. Barcelona","B. Rome", "C. Dublin","D. London"],
+    ["A. Lough Owel","B. Lough Swilly","C. Caspian Sea","D. Lough Derravaragh"]
+  ]
+}

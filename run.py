@@ -1,48 +1,18 @@
 import sys
 import os
+import json
 
-# Question bank 
-# Need to move to questions.py 
-frted_questions = {
- "What actor played the role of Father Ted?: ": "A",
- "Who is Ted's nemesis?: ": "D",
- "Who is the priest who comes to stay with Ted and Dougal and is soooooo boring?: ": "B",
- "What's the name of 'The Dancing Priest?: ": "C",
- "Where is the Annual Ted Fest held?: ": "A"
-}
-
-frted_answers = [["A. Dermot Morgan", "B. Donald Trump", "C. Niall Horan", "D. Ardal O Hanlon"],
-          ["A. Father Jack Hackett", "B. Father Brian Trendy", "C. Father Chewy Louie", "D. Father Dick Byrne"],
-          ["A. Father Steel", "B. Father Stone", "C. Father Rock", "D. Father Wood"],
-          ["A. Father Fredericks", "B. Father Duggan", "C. Father Finnegan", "D. Father Leopold"],
-          ["A. Inis Mor (Aran Islands)", "B. Achill Island", "C. Clare Island", "D. Skellig Michael?"]]
-
-questions = {
- "What is the longest river in the world?: ": "B",
- "What is the capital city of Malta?: ": "C",
- "In which country would you find a city called Sighisoara?: ": "A", 
- "In which city would you find the 'Spanish Steps'?: ": "B",
- "What is the largest lake in the world?: ": "C"
-}
-
-answers = [["A. River Liffey", "B. Amazon River", "C. Corrib River", "D. River Shannon "],
-          ["A. Dublin", "B. Cork", "C. Valletta", "D. Belfast"],
-          ["A. Romania", "B. England", "C. Poland", "D. Scotland"],
-          ["A. Barcelona ", "B. Rome ", "C. Dublin ", "D. London "],
-          ["A. Lough Owel", "B. Lough Swilly", "C. Caspian Sea ", "D. Lough Derravaragh"]]
-
-
-"""
-    Do I need clear terminal. if so decide where best
-    .
-"""
 def clear_terminal():
+    """
+    Function to clear sreen - good for ease of use and read
+    """
     os.system('clear')
 
-"""
+
+def display_menu():
+    """
     Display menu option to users
-"""
-def menu():
+    """
     print("*********************************************")
     print("*                                           *")
     print("*           Welcome to Quizeroo             *")
@@ -59,8 +29,10 @@ def menu():
            """)
 
     if choice == "1":
+        clear_terminal()
         play_game()
     elif choice == "2":
+        clear_terminal()
         read_rules()
     elif choice == "3":
         # exits the program
@@ -76,7 +48,7 @@ def menu():
 """
 def get_quiz_topic():
 
-    print("************Choose your Quiz Topic**************")
+    print("**********Choose your Quiz Topic*************")
     print()
 
     choice = input("""
@@ -111,16 +83,20 @@ def play_game():
 
     for question in questions:
         print("-------------------------")
+        print("*************************")
         print(question)
         for i in answers[question_num-1]:
             print(i)
         guess = input("Enter (A, B, C, or D): ")
+        # print(guess.upper())
+        # if guess.upper() not in ['A', 'B', 'C', 'D']:
+        #     print("Please enter A, B, C or D to make your choice")
         guess = guess.upper()
         guesses.append(guess)
 
         correct_guesses += check_answer(questions.get(question), guess)
         question_num += 1
-        clear_terminal()
+        # clear_terminal()
 
     display_score(correct_guesses, guesses)
 
@@ -140,14 +116,14 @@ def check_answer(answer, guess):
 """
     Display score along with Actual Answers and User Guesses
 """
-def display_score(correct_guesses, guesses):
+def display_score(correct_guesses, guesses, answer):
     print("-------------------------")
     print("RESULTS")
     print("-------------------------")
 
     print("Actual Answers: ", end="")
-    for i in questions:
-        print(questions.get(i), end=" ")
+    for i in answer:
+        print(i, end=" ")
     print()
 
     print("Your Guesses: ", end="")
@@ -168,16 +144,78 @@ def replay_game():
 
     if response == "YES" or response == "Y":
         return True
+    elif response == "NO" or response == "N":
+        return True    
     else:
-        return False
+        print("Please enter Y for Yes or N for No")
 
 """
     Run program functions
 """
-menu()
+# display_menu()
 
-while replay_game():
-    play_game()
+# while replay_game():
+#     play_game()
 
-print("Goodbye, please call again soon!")
+# print("Goodbye, please call again soon!")
 
+# Opening JSON file
+f = open('questions_ted.json')
+  
+# returns JSON object as 
+# a dictionary
+data = json.load(f)
+  
+# Iterating through the json
+# list
+for i in data['question']:
+    print(i)
+
+for i in data['options']:
+    print(i)    
+
+for i in data['answer']:
+    print(i)   
+  
+# Closing file
+
+
+# for i in 
+# question = (data['question'])
+
+# options = (data['options'])
+
+# answer = (data[ 'answer'])
+
+    guesses = []
+    correct_guesses = 0
+    question_num = 1
+
+    questions = (data['question'])
+    options = (data['options'])
+    answer = (data['answer'])
+
+    get_quiz_topic()
+
+    for question in questions:
+        print("-------------------------")
+        print("*************************")
+        print(question)
+        for i in options[question_num-1]:
+            print(i)
+        guess = input("Enter (A, B, C, or D): ")
+        # print(guess.upper())
+        # if guess.upper() not in ['A', 'B', 'C', 'D']:
+        #     print("Please enter A, B, C or D to make your choice")
+        guess = guess.upper()
+        guesses.append(guess)
+
+        correct_guesses += check_answer(answer[question_num-1], guess)
+        question_num += 1
+        # clear_terminal()
+
+    display_score(correct_guesses, guesses, answer)
+
+
+
+f.close()

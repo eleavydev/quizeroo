@@ -1,0 +1,23 @@
+{
+  "question": [
+    "Q1. What actor played the role of Father Ted?",
+    "Q2. Who is Ted's nemesis?",
+    "Q3. Who is the priest who comes to stay with Ted and Dougal and is soooooo boring?",
+    "Q4. What's the name of 'The Dancing Priest?",
+    "Q5. Where is the Annual Ted Fest held'?"
+  ],
+  "answer": [
+    "A",
+    "D",
+    "B",
+    "C",
+    "A"
+  ],
+  "options": [
+    ["A. Dermot Morgan", "B. Donald Trump", "C. Niall Horan", "D. Ardal O Hanlon"],
+    ["A. Father Jack Hackett", "B. Father Brian Trendy", "C. Father Chewy Louie", "D. Father Dick Byrne"],
+    ["A. Father Steel", "B. Father Stone", "C. Father Rock", "D. Father Wood"],
+    ["A. Father Fredericks", "B. Father Duggan", "C. Father Finnegan", "D. Father Leopold"],
+    ["A. Inis Mor (Aran Islands)", "B. Achill Island", "C. Clare Island", "D. Skellig Michael"]
+  ]
+}
