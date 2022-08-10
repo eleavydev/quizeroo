@@ -1,4 +1,5 @@
 import sys
+import os
 
 # Question bank 
 # Need to move to questions.py 
@@ -27,11 +28,8 @@ questions = {
 answers = [["A. River Liffey", "B. Amazon River", "C. Corrib River", "D. River Shannon "],
           ["A. Dublin", "B. Cork", "C. Valletta", "D. Belfast"],
           ["A. Romania", "B. England", "C. Poland", "D. Scotland"],
-          ["A. Barcelona, ", "B. Rome ", "C. Dublin ", "D. London "],
-          ["A. Lough Owel", "B. Lough Swilly", "C. Caspian Sea ", "D. Lough Derravaragh?"]]
-
-def main():
-   menu()
+          ["A. Barcelona ", "B. Rome ", "C. Dublin ", "D. London "],
+          ["A. Lough Owel", "B. Lough Swilly", "C. Caspian Sea ", "D. Lough Derravaragh"]]
 
 
 """
@@ -45,8 +43,11 @@ def clear_terminal():
     Display menu option to users
 """
 def menu():
-    print("************Welcome to Quizeroo**************")
-    print()
+    print("*********************************************")
+    print("*                                           *")
+    print("*           Welcome to Quizeroo             *")
+    print("*                                           *")
+    print("*********************************************")
 
     choice = input("""
            1: Play Game
@@ -54,6 +55,7 @@ def menu():
            3: Quit
 
            Please enter your choice: 
+*********************************************
            """)
 
     if choice == "1":
@@ -83,6 +85,7 @@ def get_quiz_topic():
            3: Geography
 
            Please enter your choice: 
+*********************************************
            """)
 
     # quiz_topic = input("What quiz topic would you like to choose (A. Fr. Ted, B. 80s Pop Music, or C. Geography): ")
@@ -117,6 +120,7 @@ def play_game():
 
         correct_guesses += check_answer(questions.get(question), guess)
         question_num += 1
+        clear_terminal()
 
     display_score(correct_guesses, guesses)
 
@@ -170,7 +174,7 @@ def replay_game():
 """
     Run program functions
 """
-main()
+menu()
 
 while replay_game():
     play_game()
