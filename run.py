@@ -2,10 +2,12 @@
 import sys
 import os
 import json
+import time
+
 
 def clear_terminal():
     """
-    Function to clear sreen - good UX design for ease of reading and accessibility
+    Function to clear sreen - good UX design for ease of reading
     """
     os.system('clear')
 
@@ -40,13 +42,13 @@ def display_menu():
         display_menu()
     elif choice == "3":
         # exits the program
-        sys.exit("Goodbye, please call again soon!")      
+        sys.exit("Goodbye, please call again soon!")
     else:
         clear_terminal()
-        print("!!!Please select either 1: Play Game or 2: Read Rules or 3. Quit!!!")
+        print(
+            "!Please select either 1: Play Game or 2: Read Rules or 3. Quit!")
         print()
         display_menu()
-
 
 
 def get_quiz_topic_data():
@@ -61,7 +63,7 @@ def get_quiz_topic_data():
            2: Music
            3: Geography
 
-           Please enter your choice: 
+           Please enter your choice:
 *********************************************
            """)
 
@@ -70,25 +72,27 @@ def get_quiz_topic_data():
         filename = "questions_ted.json"
     elif choice == '2':
         filename = "questions_music.json"
-    elif choice == '3':  
+    elif choice == '3':
         filename = "questions_geo.json"
     else:
-        print("!!!Please select either 1: Father Ted or 2: Music or 3: Geography!!!")
+        print(
+            "!Please select either 1: Father Ted or 2: Music or 3: Geography!")
         get_quiz_topic_data()
-        
+
     # Opening JSON file
     f = open(filename)
-  
+
     # returns JSON object as dictionary
     data = json.load(f)
-    
+
     f.close()
-    
+
     # Call clear_terminal function to keep screen clean and easy to read
     clear_terminal()
-    
+
     return data
-    
+
+
 def quiz_rules():
     """
     Display quiz rules for user
@@ -109,13 +113,13 @@ def quiz_rules():
     print()
     print("**************We hope you enjoy Quizeroo!!******************* ")
 
-    response = input("Please press any key to continue \n")
+    input("Please press Enter to continue \n")
     clear_terminal()
-      
+
 
 def play_game(data):
     """
-    Loops through question bank and prompts user to enter their guess - A, B, C or D
+    Loops through question bank and prompts user to enter - A, B, C or D
     """
     # Populate quiz list variables with data from json files
     questions = (data['questions'])
@@ -127,7 +131,7 @@ def play_game(data):
     correct_guesses = 0
     question_num = 1
 
-    # Loop through questions and prompt user to enter their guesses A, B, C or D
+    # Loop through questions and prompt user to enter A, B, C or D
     for question in questions:
         print("*********************************************")
         print(question)
@@ -138,24 +142,27 @@ def play_game(data):
         guess = input("Enter (A, B, C, or D): ")
         guess = guess.upper()
         guesses.append(guess)
-        # Call check_answer function and increment correct_guesses variable accordingly 
+        # Call check_answer function and increment correct_guesses variable
         correct_guesses += check_answer(answers[question_num-1], guess)
         question_num += 1
         # Call clear_terminal function to keep screen clean and easy to read
         clear_terminal()
-    # Call display_score function passing in necessary quiz variables 
+    # Call display_score function passing in necessary quiz variables
     display_score(correct_guesses, guesses, answers, questions)
 
 
 def check_answer(answer, guess):
     """
-    Checks answer against guess, returning 1 for correct guesses and 0 for incorrect guesses
+    Checks answer against guess, returning 1 for
+    correct guesses and 0 for incorrect guesses
     """
     if answer == guess:
         print("Correct, Well done!")
+        time.sleep(1)
         return 1
     else:
         print("Incorrect, Hard Luck!")
+        time.sleep(1)
         return 0
 
 
@@ -183,22 +190,23 @@ def display_score(correct_guesses, guesses, answers, questions):
     score = int((correct_guesses/len(questions))*100)
     print("Your score is: "+str(score)+"%")
 
+
 def replay_game():
     """
     Ask user do they wish to replay game.
     """
-    response = input("Would you like to play again? (Please enter Y (Yes) or N (No): ")
+    response = input(
+        "Would you like to play again? (Please enter Y (Yes) or N (No): ")
     response = response.upper()
 
     if response == "YES" or response == "Y":
         return True
     elif response == "NO" or response == "N":
-        return False    
+        return False
     else:
-        # Call clear_terminal function to keep screen clean and easy to read
-        clear_terminal()
         print("Please enter Y for Yes or N for No")
         replay_game()
+
 
 def main():
     """
@@ -208,7 +216,7 @@ def main():
     If they don't wish to Goodbye message is displayed
     """
     display_menu()
-    
+
     while replay_game():
 
         data = get_quiz_topic_data()
@@ -217,4 +225,3 @@ def main():
     print("Goodbye, please call again soon!")
 
 main()
- 
