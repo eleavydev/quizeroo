@@ -1,4 +1,6 @@
-# list of imports
+"""
+    List of imports for game
+"""
 import sys
 import os
 import json
@@ -107,13 +109,13 @@ def quiz_rules():
            2: Music
            3: Geography
            """)
-    print("** Each Quiz Topic consists of 5 quick and easy fun questions. ")
+    print("** Each Quiz Topic consists of 10 quick and easy fun questions. ")
     print("** At the end of each quiz topic, your score will be displayed.")
     print("** You can choose to play again if you wish.                  ")
     print()
     print("**************We hope you enjoy Quizeroo!!******************* ")
 
-    input("Please press Enter to continue \n")
+    input("Please press Enter to continue. \n")
     clear_terminal()
 
 
@@ -222,6 +224,8 @@ def main():
         data = get_quiz_topic_data()
         play_game(data)
 
-    print("Goodbye, please call again soon!")
+    print("Bye bye, please call again soon!")
 
 main()
+
+

@@ -2,22 +2,38 @@
   "questions": [
     "Q1. What is the longest river in the world?",
     "Q2. What is the capital city of Malta?",
-    "Q3. In which country would you find a city called Sighisoara?",
+    "Q3. In which country would you find a city called 'Sighisoara'?",
     "Q4. In which city would you find the 'Spanish Steps'?",
-    "Q5. What is the largest lake in the world'?"
+    "Q5. What is the largest lake in the world?",
+    "Q6. Which country has the capital city of 'Ljubljana'?",
+    "Q7. What is the largest country in the world?",
+    "Q8. Which country in the world has most borders?",
+    "Q9. Which country has the capital city of 'Tallinn'?",
+    "Q10. What is the smallest country in the world?"
   ],
   "answers": [
     "B",
     "C",
     "A",
     "B",
-    "C"
+    "C",
+    "D",
+    "A",
+    "D",
+    "D",
+    "B"
+
   ],
   "options": [
     ["A. River Liffey", "B. Amazon River","C. Corrib River","D. River Shannon"],
     ["A. Dublin","B. Cork", "C. Valletta", "D. Belfast"],
     ["A. Romania","B. England","C. Poland","D. Scotland"],
     ["A. Barcelona","B. Rome", "C. Dublin","D. London"],
-    ["A. Lough Owel","B. Lough Swilly","C. Caspian Sea","D. Lough Derravaragh"]
+    ["A. Lough Owel","B. Lough Swilly","C. Caspian Sea","D. Lough Derravaragh"],
+    ["A. Poland","B. France","C. Norway","D. Slovenia"],
+    ["A. Russia","B. Ireland","C. Slovakia","D. Belgium"],
+    ["A. Iceland","B. Muldova","C. Croatia","D. China"],
+    ["A. England","B. Sweden","C. Denmark","D. Estonia"],
+    ["A. Brazil","B. Vatican City","C. Peru","D. Germany"]
   ]
 }

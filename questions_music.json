@@ -4,20 +4,35 @@
     "Q2. What band sang 'With or Without You'?",
     "Q3. 'Running up that Hill' was the lead single by which female artist?",
     "Q4. Which female artist was known as the 'Queen of Pop'?",
-    "Q5. Which band released the song 'Enter Sandman'?"
+    "Q5. Which band released the song 'Enter Sandman'?",
+    "Q6. 'No Woman, No Cry' is a reggae song by whom?",
+    "Q7. Which band released the album 'Ten'?",
+    "Q8. What Sinéad O'Connor song was written by Prince?",
+    "Q9. How many members were in the Spice Girls?",
+    "Q10. Which band released the song '1979'?"
   ],
   "answers": [
     "D",
     "C",
     "C",
     "B",
-    "C"
+    "C",
+    "A",
+    "C",
+    "C",
+    "A",
+    "D"
   ],
   "options": [
     ["A. Joe Dolan", "B. Bono","C. Eddie Vedder","D. Elvis Presley"],
     ["A. Vengaboys","B. Korn", "C. U2", "D. The Coronas"],
     ["A. Enya","B. Rihanna","C. Kate Bush","D. Kylie"],
     ["A. Cathy Davey","B. Madonna", "C. Mylie Cyrus","D. Taylor Swift"],
-    ["A. Westlife","B. Boyzone","C. Metallica","D. The Drifters"]
+    ["A. Westlife","B. Boyzone","C. Metallica","D. The Drifters"],
+    ["A. Bob Marley and the Wailers","B. Weezer", "C. Blur", "D. Oasis"],
+    ["A. Therapy", "B. The Pixies","C. Pearl Jam","D. Violent Femmes"],
+    ["A. No Man's Woman","B. The Emperor's New Clothes","C. Nothing Compares 2 U","D. Mandinka"],
+    ["A. Five","B. Six", "C. Three","D. Two"],
+    ["A. REM","B. Nirvana","C. Pearl Jam","D. Smashing Pumpkins"]
   ]
 }
