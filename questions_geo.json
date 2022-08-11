@@ -1,12 +1,12 @@
 {
-  "question": [
+  "questions": [
     "Q1. What is the longest river in the world?",
     "Q2. What is the capital city of Malta?",
     "Q3. In which country would you find a city called Sighisoara?",
     "Q4. In which city would you find the 'Spanish Steps'?",
     "Q5. What is the largest lake in the world'?"
   ],
-  "answer": [
+  "answers": [
     "B",
     "C",
     "A",

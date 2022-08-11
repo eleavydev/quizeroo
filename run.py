@@ -4,7 +4,7 @@ import json
 
 def clear_terminal():
     """
-    Function to clear sreen - good for ease of use and read
+    Function to clear sreen - good for ease of reading and accessibility
     """
     os.system('clear')
 
@@ -30,7 +30,8 @@ def display_menu():
 
     if choice == "1":
         clear_terminal()
-        play_game()
+        data = get_quiz_topic_data()
+        play_game(data)
     elif choice == "2":
         clear_terminal()
         read_rules()
@@ -46,7 +47,7 @@ def display_menu():
 """
     Display quiz topics for user to choose
 """
-def get_quiz_topic():
+def get_quiz_topic_data():
 
     print("**********Choose your Quiz Topic*************")
     print()
@@ -59,6 +60,34 @@ def get_quiz_topic():
            Please enter your choice: 
 *********************************************
            """)
+
+    # return choice
+    if choice == '1':
+        filename = "questions_ted.json"
+    elif choice == '2':
+        filename = "questions_music.json"
+    elif choice == '3':  
+        filename = "questions_geo.json"
+    else:
+        print("wrong choice")  
+
+    # Opening JSON file
+    # f = open('questions_ted.json')
+    f = open(filename)
+  
+    # returns JSON object as dictionary
+    data = json.load(f)
+
+    # for i in data['question']:
+    #     print(i)
+
+    # for i in data['options']:
+    #     print(i)    
+
+    # for i in data['answer']:
+    #     print(i)   
+
+    return data
 
     # quiz_topic = input("What quiz topic would you like to choose (A. Fr. Ted, B. 80s Pop Music, or C. Geography): ")
     
@@ -73,19 +102,29 @@ def read_rules():
 """
     Loops through question bank and prompts user to enter their guess - A, B, C or D
 """
-def play_game():
+def play_game(data):
 
     guesses = []
     correct_guesses = 0
     question_num = 1
 
-    get_quiz_topic()
+    print("returning quiz topic")
+    # print(get_quiz_topic())
+    
+    questions = (data['questions'])
+    options = (data['options'])
+    answers = (data['answers'])
+
+    print(questions)
+    print(options)
+    print(answers)
 
     for question in questions:
         print("-------------------------")
         print("*************************")
         print(question)
-        for i in answers[question_num-1]:
+        for i in options[question_num-1]:
+            # print("/n")
             print(i)
         guess = input("Enter (A, B, C, or D): ")
         # print(guess.upper())
@@ -94,11 +133,11 @@ def play_game():
         guess = guess.upper()
         guesses.append(guess)
 
-        correct_guesses += check_answer(questions.get(question), guess)
+        correct_guesses += check_answer(answers[question_num-1], guess)
         question_num += 1
         # clear_terminal()
 
-    display_score(correct_guesses, guesses)
+    display_score(correct_guesses, guesses,answers, questions)
 
 """
     Checks answer against guess, returning 1 for correct guesses and 0 for incorrect guesses
@@ -116,13 +155,13 @@ def check_answer(answer, guess):
 """
     Display score along with Actual Answers and User Guesses
 """
-def display_score(correct_guesses, guesses, answer):
+def display_score(correct_guesses, guesses, answers, questions):
     print("-------------------------")
     print("RESULTS")
     print("-------------------------")
 
     print("Actual Answers: ", end="")
-    for i in answer:
+    for i in answers:
         print(i, end=" ")
     print()
 
@@ -149,73 +188,20 @@ def replay_game():
     else:
         print("Please enter Y for Yes or N for No")
 
-"""
-    Run program functions
-"""
-# display_menu()
+def main():
+    """
+    Run all program functions
+    """
+    display_menu()
 
-# while replay_game():
-#     play_game()
+    # data = get_quiz_topic_data()
+    
+    while replay_game():
 
-# print("Goodbye, please call again soon!")
+        data = get_quiz_topic_data()
+        play_game(data)
+        # play_game()
 
-# Opening JSON file
-f = open('questions_ted.json')
-  
-# returns JSON object as 
-# a dictionary
-data = json.load(f)
-  
-# Iterating through the json
-# list
-for i in data['question']:
-    print(i)
+    print("Goodbye, please call again soon!")
 
-for i in data['options']:
-    print(i)    
-
-for i in data['answer']:
-    print(i)   
-  
-# Closing file
-
-
-# for i in 
-# question = (data['question'])
-
-# options = (data['options'])
-
-# answer = (data[ 'answer'])
-
-    guesses = []
-    correct_guesses = 0
-    question_num = 1
-
-    questions = (data['question'])
-    options = (data['options'])
-    answer = (data['answer'])
-
-    get_quiz_topic()
-
-    for question in questions:
-        print("-------------------------")
-        print("*************************")
-        print(question)
-        for i in options[question_num-1]:
-            print(i)
-        guess = input("Enter (A, B, C, or D): ")
-        # print(guess.upper())
-        # if guess.upper() not in ['A', 'B', 'C', 'D']:
-        #     print("Please enter A, B, C or D to make your choice")
-        guess = guess.upper()
-        guesses.append(guess)
-
-        correct_guesses += check_answer(answer[question_num-1], guess)
-        question_num += 1
-        # clear_terminal()
-
-    display_score(correct_guesses, guesses, answer)
-
-
-
-f.close()
+# f.close()  - do i need to call this to safely close json file?
