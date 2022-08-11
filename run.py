@@ -1,3 +1,4 @@
+# list of imports
 import sys
 import os
 import json
@@ -35,7 +36,8 @@ def display_menu():
         play_game(data)
     elif choice == "2":
         clear_terminal()
-        read_rules()
+        quiz_rules()
+        display_menu()
     elif choice == "3":
         # exits the program
         sys.exit("Goodbye, please call again soon!")      
@@ -87,30 +89,29 @@ def get_quiz_topic_data():
     
     return data
     
-def read_rules():
+def quiz_rules():
     """
     Display quiz rules for user
     """
-    print("*******************Welcome to Quizeroo!!!*******************")
+    print("*******************Welcome to Quizeroo!!!******************** ")
     print()
-    print("                      Quiz Rules                            ")
+    print("                      Quiz Rules                              ")
     print()
-    print("You will have a choice of 3 Quiz Topics to choose from.     ")
+    print("You will have a choice of 3 Quiz Topics to choose from.       ")
     print("""
            1: Father Ted
            2: Music
            3: Geography
            """)
+    print("** Each Quiz Topic consists of 5 quick and easy fun questions. ")
+    print("** At the end of each quiz topic, your score will be displayed.")
+    print("** You can choose to play again if you wish.                  ")
     print()
-    print("Each Quiz Topic consists of 5 quick and easy fun questions. ")
-    print()
-    print("At the end of each quiz topic, your score will be displayed.")
-    print("You can choose to play again if you wish.                   ")
-    print()
-    print("**************We hope you enjoy Quizeroo!!****************** ")
+    print("**************We hope you enjoy Quizeroo!!******************* ")
 
- 
-    continue()
+    response = input("Please press any key to continue \n")
+    clear_terminal()
+      
 
 def play_game(data):
     """
