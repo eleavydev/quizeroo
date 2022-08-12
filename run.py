@@ -30,7 +30,7 @@ def display_menu():
 *           3: Quit                         *
 *                                           *
 *           Please enter your choice:       *
-
+                (1, 2 or 3)
 *********************************************
            """)
 
@@ -66,9 +66,10 @@ def get_quiz_topic_data():
            3: Geography
 
            Please enter your choice:
+                (1, 2 or 3)
 *********************************************
            """)
-
+    print(choice)
     # return choice
     if choice == '1':
         filename = "questions_ted.json"
@@ -77,10 +78,11 @@ def get_quiz_topic_data():
     elif choice == '3':
         filename = "questions_geo.json"
     else:
+        clear_terminal()
         print(
             "!Please select either 1: Father Ted or 2: Music or 3: Geography!")
-        get_quiz_topic_data()
-
+        return get_quiz_topic_data()
+          
     # Opening JSON file
     f = open(filename)
 
@@ -103,7 +105,7 @@ def quiz_rules():
     print()
     print("                      Quiz Rules                              ")
     print()
-    print("You will have a choice of 3 Quiz Topics to choose from.       ")
+    print("You will have a choice of 3 Quiz Topics to choose from:       ")
     print("""
            1: Father Ted
            2: Music
@@ -111,8 +113,10 @@ def quiz_rules():
            """)
     print("** Each Quiz Topic consists of 10 quick and easy fun questions.")
     print("** You must enter A, B, C or D in order to answer questions.   ")
-    print("** System will tell you if you answered correctly...")
-    print("** 'Correct, Well Done' or 'Incorrect, Hard Luck' will display ")
+    print("** Wait for the System to tell you if you answered correctly...")
+    print("** 'Correct, Well Done' or 'Incorrect, Hard Luck' will display.")
+    print("** Your next question will then display.")
+    print()
     print("** At the end of each quiz topic, your score will be displayed.")
     print("** You can choose to play again and try Beat your Score!!      ")
     print()
@@ -210,7 +214,8 @@ def replay_game():
         return False
     else:
         print("Please enter Y for Yes or N for No")
-        replay_game()
+        clear_terminal()
+        return replay_game()
 
 
 def main():
