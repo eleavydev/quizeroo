@@ -20,7 +20,7 @@ def display_menu():
     """
     print("*********************************************")
     print("*                                           *")
-    print("*           Welcome to Quizeroo             *")
+    print("*           Welcome to Quizeroo!!!          *")
     print("*                                           *")
     print("*********************************************")
 
@@ -109,11 +109,14 @@ def quiz_rules():
            2: Music
            3: Geography
            """)
-    print("** Each Quiz Topic consists of 10 quick and easy fun questions. ")
+    print("** Each Quiz Topic consists of 10 quick and easy fun questions.")
+    print("** You must enter A, B, C or D in order to answer questions.   ")
+    print("** System will tell you if you answered correctly...")
+    print("** 'Correct, Well Done' or 'Incorrect, Hard Luck' will display ")
     print("** At the end of each quiz topic, your score will be displayed.")
-    print("** You can choose to play again if you wish.                  ")
+    print("** You can choose to play again and try Beat your Score!!      ")
     print()
-    print("**************We hope you enjoy Quizeroo!!******************* ")
+    print("**************We hope you enjoy Quizeroo!!!******************* ")
 
     input("Please press Enter to continue. \n")
     clear_terminal()
