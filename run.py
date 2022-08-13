@@ -1,5 +1,5 @@
 """
-    List of imports for game
+    List of imports for Quizeroo game
 """
 import sys
 import os
@@ -98,7 +98,7 @@ def get_quiz_topic_data():
 
 def quiz_rules():
     """
-    Display quiz rules for user
+    Display Quiz Rules for user
     """
     print("*******************Welcome to Quizeroo!!!******************** ")
     print()
@@ -238,4 +238,5 @@ def main():
     print("Bye bye, please call again soon!")
 
 main()
+
 
