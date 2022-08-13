@@ -34,23 +34,22 @@ def display_menu():
 *********************************************
            """)
 
-    if choice == "1":
+    if choice == "1":  # Play Game
         clear_terminal()
         data = get_quiz_topic_data()
         play_game(data)
-    elif choice == "2":
+    elif choice == "2":  # Read Rules
         clear_terminal()
         quiz_rules()
         display_menu()
-    elif choice == "3":
-        # exits the program
+    elif choice == "3":  # Quit - exits program
         sys.exit("Goodbye, please call again soon!")
     else:
         clear_terminal()
         print(
             "!Please select either 1: Play Game or 2: Read Rules or 3. Quit!")
         print()
-        display_menu()
+        return display_menu()
 
 
 def get_quiz_topic_data():
@@ -82,7 +81,7 @@ def get_quiz_topic_data():
         print(
             "!Please select either 1: Father Ted or 2: Music or 3: Geography!")
         return get_quiz_topic_data()
-          
+
     # Opening JSON file
     f = open(filename)
 
@@ -150,6 +149,10 @@ def play_game(data):
         print()
         guess = input("Enter (A, B, C, or D): ")
         guess = guess.upper()
+        if guess not in (['A', 'B', 'C', 'D']):
+            print(f"You entered {guess}. Please enter only A, B, C or D")
+            guess = input("Enter (A, B, C, or D): ")
+            guess = guess.upper()
         guesses.append(guess)
         # Call check_answer function and increment correct_guesses variable
         correct_guesses += check_answer(answers[question_num-1], guess)
@@ -235,5 +238,4 @@ def main():
     print("Bye bye, please call again soon!")
 
 main()
-
 
