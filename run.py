@@ -16,7 +16,7 @@ def clear_terminal():
 
 def display_menu():
     """
-    Display menu option to users
+    Display Quizeroo menu option to users
     """
     print("*********************************************")
     print("*                                           *")
