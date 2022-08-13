@@ -46,10 +46,10 @@ If I were to extend the game in future, I would add in below features.
        - Output questions depending on their difficulty rating according to user input. 
        - Randomise order of questions so they are asked in different order every time. 
   
-## Wireframe
+## Flow chart
 
-I prepared a rough wireframe of how the game should look and its different areas. 
-![Mockup](https://res.cloudinary.com/dlsbkq7mw/image/upload/v1657189220/Rock%20paper%20scissors/Wireframe_Rock_Paper_Scissors_lrrwq7.jpg) 
+I prepared a very rough flowchart of how the game will flow. 
+![Flowchart](https://res.cloudinary.com/dlsbkq7mw/image/upload/v1660359321/Quizeroo/Quizeroo_Flowchart_rhdqo9.jpg) 
 
 ## The Welcome screen
 The Welcome screen presents 3 different options to the user: 
