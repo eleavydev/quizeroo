@@ -43,7 +43,7 @@ def display_menu():
         quiz_rules()
         display_menu()
     elif choice == "3":  # Quit - exits program
-        sys.exit("Goodbye, please call again soon!")
+        sys.exit("Bye bye, please call again soon!")
     else:
         clear_terminal()
         print(
